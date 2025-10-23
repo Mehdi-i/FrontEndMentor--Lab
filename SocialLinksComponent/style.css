@@ -71,3 +71,8 @@ body {
   border: none;
   padding: 12px 0;
 }
+
+.social__links button:active {
+  background-color: hsl(75, 94%, 57%);
+  color: hsl(0, 0%, 12%);
+}
