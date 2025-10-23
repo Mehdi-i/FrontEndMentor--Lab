@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+html,
+body {
+  margin: 0;
+  font-family: "Inter";
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 100%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.main__container {
+  background-color: hsl(0, 0%, 12%);
+  border-radius: 12px;
+  width: 300px;
+  padding: 0px 22px 28px 22px;
+}
+
+.profile__picture {
+  margin-top: 36px;
+}
+
+.profile__picture img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 100px;
+}
+
+.user__details {
+  text-align: center;
+}
+
+.user__details h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.user__details .location {
+  color: hsl(75, 94%, 57%);
+  font-size: 12px;
+  margin: 8px;
+  font-weight: 700;
+}
+
+.user__details p {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 24px 0 20px 0;
+}
+
+.social__links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 20px;
+}
+
+.social__links button {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+  border-radius: 5px;
+  border: none;
+  padding: 12px 0;
+}
