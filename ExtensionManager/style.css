@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-bg-color: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+    --red-400: hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700: hsl(3, 77%, 44%);
+    --Neutral-900: hsl(227, 75%, 14%);
+    --Neutral-800: hsl(226, 25%, 17%);
+    --Neutral-700: hsl(225, 23%, 24%);
+    --Neutral-600: hsl(226, 11%, 37%);
+    --Neutral-300: hsl(0, 0%, 78%);
+    --Neutral-200: hsl(217, 61%, 90%);
+    --Neutral-100: hsl(0, 0%, 93%);
+    --Neutral-0: hsl(200, 60%, 99%);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans';
+    background-image: var(--primary-bg-color);
+}
+
+body {
+    height: 100%;
+}
+
+.main__container {
+    padding: 28px 64px 16px 64px;
+    box-sizing: border-box;
+}
+
+.nav__bar {
+    border: 1px solid var(--Neutral-200);
+    box-shadow: 3px 3px 12px var(--Neutral-200);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 14px;
+    background-color: var(--Neutral-0);
+    box-sizing: border-box;
+}
+
+.nav__bar button {
+    border-radius: 12px;
+    border: none;
+    padding: 10px 14px;
+    background-color: var(--Neutral-100);
+    cursor: pointer;
+}
+
+.filter__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.filter__container h1 {
+    margin: 0;
+    color: var(--Neutral-900);
+    font-size: 28px;
+}
+
+p,
+h4 {
+    margin: 0;
+}
+
+.extensions__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding-top: 36px;
+}
+
+.extension {
+    border: 1px solid var(--Neutral-200);
+    border-radius: 14px;
+    padding: 12px;
+    background-color: var(--Neutral-0);
+}
+
+.extension__details img {
+    width: 55px;
+}
+
+.extension__details {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 8px;
+}
+
+.extension__details--inner p {
+    margin-top: 4px;
+    color: var(--Neutral-600);
+}
+
+.extension__details--inner h4 {
+    color: var(--Neutral-900);
+}
+
+.extension__action {
+    padding: 28px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.extension__action button,
+.filter__container button {
+    border-radius: 16px;
+    border: 1px solid var(--Neutral-300);
+    color: var(--Neutral-900);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px 10px;
+    background-color: var(--Neutral-0);
+    cursor: pointer;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--Neutral-300);
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: var(--red-700);
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(18px);
+}
+
+.extension__action .slider:active,
+.nav__bar button:active,
+.filter__options button:active {
+    border: 1px solid var(--red-500);
+}
+
+.extension__action button:active {
+    border: 1px solid var(--red-700);
+}
+
+.nav__bar button:hover,
+.extension__action button:hover {
+    background-color: #f2f2f2;
+}
+
+.filter__options .active {
+    background-color: var(--red-700);
+    color: var(--Neutral-0);
+}
+
+.filter__options button {
+    padding: 8px 14px;
+}
+
+@media only screen and (max-width: 600px) {
+    .main__container {
+        padding: 28px 10px 16px 10px;
+    }
+    .filter__container {
+        justify-content: center;
+    }
+    .filter__container .filter__options {
+        padding-top: 8px;
+    }
+}
